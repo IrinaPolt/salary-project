@@ -1,0 +1,122 @@
+[
+  {
+    "first_name": "Ivan",
+    "last_name": "Petrov",
+    "email": "ivan_petrov@mail.ru",
+    "password": "password"
+  },
+  {
+    "first_name": "Maria",
+    "last_name": "Sidorova",
+    "email": "maria_sidorova@mail.ru",
+    "password": "qwerty123"
+  },
+  {
+    "first_name": "Alex",
+    "last_name": "Ivanov",
+    "email": "alex_ivanov@mail.ru",
+    "password": "123456"
+  },
+  {
+    "first_name": "Elena",
+    "last_name": "Kuznetsova",
+    "email": "elena_kuznetsova@mail.ru",
+    "password": "pass123"
+  },
+  {
+    "first_name": "Dmitry",
+    "last_name": "Smirnov",
+    "email": "dmitry_smirnov@mail.ru",
+    "password": "abcde"
+  },
+  {
+    "first_name": "Olga",
+    "last_name": "Popova",
+    "email": "olga_popova@mail.ru",
+    "password": "testpass"
+  },
+  {
+    "first_name": "Sergei",
+    "last_name": "Kozlov",
+    "email": "sergei_kozlov@mail.ru",
+    "password": "mypassword"
+  },
+  {
+    "first_name": "Natalia",
+    "last_name": "Morozova",
+    "email": "natalia_morozova@mail.ru",
+    "password": "secret123"
+  },
+  {
+    "first_name": "Maxim",
+    "last_name": "Volkov",
+    "email": "maxim_volkov@mail.ru",
+    "password": "pass1234"
+  },
+  {
+    "first_name": "Anna",
+    "last_name": "Fedorova",
+    "email": "anna_fedorova@mail.ru",
+    "password": "welcome123"
+  },
+  {
+    "first_name": "Andrei",
+    "last_name": "Kalinin",
+    "email": "andrei_kalinin@mail.ru",
+    "password": "securepass"
+  },
+  {
+    "first_name": "Yulia",
+    "last_name": "Orlova",
+    "email": "yulia_orlova@mail.ru",
+    "password": "pass12345"
+  },
+  {
+    "first_name": "Igor",
+    "last_name": "Sokolov",
+    "email": "igor_sokolov@mail.ru",
+    "password": "password123"
+  },
+  {
+    "first_name": "Tatiana",
+    "last_name": "Novikova",
+    "email": "tatiana_novikova@mail.ru",
+    "password": "test123"
+  },
+  {
+    "first_name": "Pavel",
+    "last_name": "Vasilyev",
+    "email": "pavel_vasilyev@mail.ru",
+    "password": "12345678"
+  },
+  {
+    "first_name": "Ekaterina",
+    "last_name": "Kozlova",
+    "email": "ekaterina_kozlova@mail.ru",
+    "password": "mypassword123"
+  },
+  {
+    "first_name": "Vladimir",
+    "last_name": "Mikhailov",
+    "email": "vladimir_mikhailov@mail.ru",
+    "password": "pass123456"
+  },
+  {
+    "first_name": "Nikolay",
+    "last_name": "Ilyin",
+    "email": "nikolay_ilyin@mail.ru",
+    "password": "welcometest"
+  },
+  {
+    "first_name": "Marina",
+    "last_name": "Egorova",
+    "email": "marina_egorova@mail.ru",
+    "password": "abc123"
+  },
+  {
+    "first_name": "Roman",
+    "last_name": "Kovalev",
+    "email": "roman_kovalev@mail.ru",
+    "password": "testpassword"
+  }
+]

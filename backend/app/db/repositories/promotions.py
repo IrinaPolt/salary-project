@@ -3,9 +3,9 @@ from app.models.promotions import PromotionBase, PromotionInDB
 
 
 CREATE_PROMOTION_QUERY = """
-    INSERT INTO promotions (employee_name, position, promotion_date)
-    VALUES (:employee_name, :position, :promotion_date)
-    RETURNING id, employee_name, position, promotion_date;
+    INSERT INTO promotions (user_id, position, promotion_date)
+    VALUES (:user_id, :position, :promotion_date)
+    RETURNING id, user_id, position, promotion_date;
 """
 
 

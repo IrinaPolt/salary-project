@@ -1,0 +1,102 @@
+[
+  {
+    "user_id": 1,
+    "position": "manager",
+    "promotion_date": "2023-06-15T10:30:00"
+  },
+  {
+    "user_id": 2,
+    "position": "developer",
+    "promotion_date": "2023-07-01T14:45:00"
+  },
+  {
+    "user_id": 3,
+    "position": "designer",
+    "promotion_date": "2023-08-10T09:15:00"
+  },
+  {
+    "user_id": 4,
+    "position": "sales representative",
+    "promotion_date": "2023-06-25T11:00:00"
+  },
+  {
+    "user_id": 5,
+    "position": "analyst",
+    "promotion_date": "2023-07-05T16:20:00"
+  },
+  {
+    "user_id": 6,
+    "position": "project manager",
+    "promotion_date": "2023-08-20T13:30:00"
+  },
+  {
+    "user_id": 7,
+    "position": "engineer",
+    "promotion_date": "2023-06-18T09:45:00"
+  },
+  {
+    "user_id": 8,
+    "position": "supervisor",
+    "promotion_date": "2023-07-10T11:15:00"
+  },
+  {
+    "user_id": 9,
+    "position": "consultant",
+    "promotion_date": "2023-08-05T14:00:00"
+  },
+  {
+    "user_id": 10,
+    "position": "administrator",
+    "promotion_date": "2023-06-20T16:40:00"
+  },
+  {
+    "user_id": 11,
+    "position": "HR manager",
+    "promotion_date": "2023-07-15T10:00:00"
+  },
+  {
+    "user_id": 12,
+    "position": "supervisor",
+    "promotion_date": "2023-08-08T12:30:00"
+  },
+  {
+    "user_id": 13,
+    "position": "developer",
+    "promotion_date": "2023-06-22T15:10:00"
+  },
+  {
+    "user_id": 14,
+    "position": "analyst",
+    "promotion_date": "2023-07-20T10:30:00"
+  },
+  {
+    "user_id": 15,
+    "position": "manager",
+    "promotion_date": "2023-08-12T13:00:00"
+  },
+  {
+    "user_id": 16,
+    "position": "sales representative",
+    "promotion_date": "2023-06-24T14:20:00"
+  },
+  {
+    "user_id": 17,
+    "position": "engineer",
+    "promotion_date": "2023-07-25T11:45:00"
+  },
+  {
+    "user_id": 18,
+    "position": "designer",
+    "promotion_date": "2023-08-15T16:10:00"
+  },
+  {
+    "user_id": 19,
+    "position": "project manager",
+    "promotion_date": "2023-06-26T13:15:00"
+  },
+  {
+    "user_id": 20,
+    "position": "consultant",
+    "promotion_date": "2023-07-30T09:30:00"
+  }
+]

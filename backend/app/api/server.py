@@ -1,4 +1,7 @@
+import json
+import httpx
 import bcrypt
+from starlette.status import HTTP_200_OK, HTTP_201_CREATED
 from fastapi import FastAPI, Depends, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.security import OAuth2PasswordBearer
@@ -8,8 +11,13 @@ from jose import JWTError, jwt
 from app.api.routes import router as api_router
 from app.core import config, tasks
 from app.db.repositories.users import UsersRepository
+from app.models.users import UserInfo
 from app.api.dependencies.database import get_repository
 
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+PROJECT_DIR = BASE_DIR / 'utils'
 
 ACCESS_TOKEN_EXPIRE_MINUTES = 30
 ALGORITHM = "HS256"
@@ -45,8 +53,6 @@ async def get_current_user(token: str = Depends(oauth2_scheme)):
         payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
         email: str = payload.get("email")
         if email is None:
-            import sys
-            print(payload, file=sys.stderr)
             raise HTTPException(status_code=401, detail="Invalid authentication credentials")
     except JWTError:
         raise HTTPException(status_code=401, detail="Invalid token")
@@ -64,12 +70,16 @@ def create_access_token(data: dict, expires_delta: timedelta = None):
     return encoded_jwt
 
 
-@app.get("/protected_route", dependencies=[Depends(get_current_user)])
-async def protected_route():
-    return {"message": "Hello!"}
+@app.get("/check/", dependencies=[Depends(get_current_user)], name="users:check", status_code=HTTP_200_OK)
+async def protected_route(
+        email: str = Depends(get_current_user),
+        users_repo: UsersRepository = Depends(get_repository(UsersRepository)),
+) -> UserInfo:
+    user = await users_repo.get_user_info(email=email)
+    return user
 
 
-@app.post("/login")
+@app.post("/login/", name="users:login", status_code=HTTP_200_OK)
 async def login(
         email: str,
         password: str,
@@ -85,3 +95,37 @@ async def login(
         return {"access_token": access_token, "token_type": "bearer"}
     else:
         return {"error": "Invalid username or password"}
+
+
+def load_from_file(file_path):
+    with open(file_path, 'r') as file:
+        data = json.load(file)
+    return data
+
+
+@app.get("/load_data/", status_code=HTTP_201_CREATED)
+async def load():
+    users_data = load_from_file(PROJECT_DIR / 'users.json')
+    wages_data = load_from_file(PROJECT_DIR / 'wages.json')
+    promotions_data = load_from_file(PROJECT_DIR / 'promotions.json')
+    async with httpx.AsyncClient() as client:
+        for user_data in users_data:
+            response = await client.post("http://localhost:8000/api/users/", json={"new_user": user_data})
+            if response.status_code == 201:
+                continue
+            else:
+                return f"Failed to create user: {response.text}"
+        for wage_data in wages_data:
+            response = await client.post("http://localhost:8000/api/wages/", json={"new_wage": wage_data})
+            if response.status_code == 201:
+                continue
+            else:
+                return f"Failed to create user's wage: {response.text}"
+        for promotion_data in promotions_data:
+            response = await client.post("http://localhost:8000/api/promotions/",
+                                         json={"new_promotion": promotion_data})
+            if response.status_code == 201:
+                continue
+            else:
+                return f"Failed to create user's promotion: {response.text}"
+            return "Data loaded successfully"
